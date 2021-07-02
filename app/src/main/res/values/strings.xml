@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Dziejesie</string>
+
+    <string name="finans">Balans aktualny miesiąc:</string>
+    <string name="save_button">Zapisz</string>
+
+    <string-array name="payment_type">
+        <item>Dochód</item>
+        <item>Wydatek</item>
+    </string-array>
+</resources>

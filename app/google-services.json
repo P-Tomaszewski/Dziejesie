@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "578848983701",
+    "project_id": "dziejesie-3cde5",
+    "storage_bucket": "dziejesie-3cde5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:578848983701:android:e18ef69cf060b5c9f7299c",
+        "android_client_info": {
+          "package_name": "pl.edu.pjatk.dziejesie"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "578848983701-pf0j9hpn7hu0cgohanbj0cvnoeuo003l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnoLudpnAA8i8s9_O4mx9cibJpSXd00lY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "578848983701-pf0j9hpn7hu0cgohanbj0cvnoeuo003l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
