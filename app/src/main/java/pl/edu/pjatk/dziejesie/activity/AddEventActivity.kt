@@ -56,33 +56,9 @@ class AddEventActivity : AppCompatActivity() {
         }
     }
 
-//    private fun setupShareButton() = view.share.setOnClickListener {
-//        val sendIntent: Intent = Intent().apply {
-//            action = Intent.ACTION_SEND
-//            putExtra(Intent.EXTRA_TEXT,
-//                    "Miejsce: " + view.paymentPlace.text + " " + "\n" +
-//                            "Kategoria: " + view.paymentCategory.text + "\n" +
-//                            "Data: " + view.paymentDate.text + "\n" +
-//                            "Typ: " + view.spinner.selectedItem.toString() + "\n" +
-//                            "Kwota: " + view.paymentAmount.text.toString())
-//            type = "text/plain"
-//        }
-//
-//        val shareIntent = Intent.createChooser(sendIntent, null)
-//        startActivity(shareIntent) //share
-//    }
-
-//    private fun templateWithData(id: Long) = thread {
-//        val transaction = db.payments.getPaymentById(id)
-//        findViewById<EditText>(R.id.payment_place).setText(transaction.place)
-//        findViewById<EditText>(R.id.payment_amount).setText(transaction.amount.toString())
-//        findViewById<EditText>(R.id.payment_date).setText(transaction.date)
-//        findViewById<EditText>(R.id.payment_category).setText(transaction.category)
-//    }
-
     private fun setupSave(edit: Boolean, id: Long) = view.saveButton.setOnClickListener {
 
-        if(!edit){ //new
+        if(!edit){
             val event = Event(
                     id = "",
                 name = view.name.text.toString(),
@@ -102,21 +78,6 @@ class AddEventActivity : AppCompatActivity() {
             setResult(Activity.RESULT_OK)
             finish()
         }
-//        else{ //update
-//            val paymentDto = PaymentDto(
-//                    id,
-//                    place = view.paymentPlace.text.toString(),
-//                    category = view.paymentCategory.text.toString(),
-//                    amount = amountType(view.paymentAmount.text.toString(), view.spinner.selectedItem.toString()),
-//                    date = setDate(view.paymentDate.text.toString()),
-//                    type = view.spinner.selectedItem.toString()
-//            )
-//            pool.submit{
-//                db.payments.updatePayment(paymentDto)
-//                setResult(Activity.RESULT_OK)
-//                finish()
-//            }
-//        }
     }
 
     private fun setDate(date: String): String{

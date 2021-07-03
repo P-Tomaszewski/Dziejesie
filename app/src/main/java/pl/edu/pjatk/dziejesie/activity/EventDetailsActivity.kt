@@ -24,9 +24,9 @@ class EventDetailsActivity: AppCompatActivity() {
         setContentView(view.root)
 
         val id: String = (intent.extras?.get("id") ?: "0") as String
-//        if(!id.equals("0")) {
-            templateWithData(id)}
-//    }
+            templateWithData(id)
+    }
+
     private fun templateWithData(id: String) = thread {
       var doc = db.collection("events").document(id)
     doc.get()
@@ -36,19 +36,7 @@ class EventDetailsActivity: AppCompatActivity() {
                     findViewById<TextView>(R.id.detailNote).setText(document.data!!.get("note").toString())
             }
             .addOnFailureListener { exception ->
-//                Log.d(TAG, "get failed with ", exception)
+                Log.d("err", "get failed with ", exception)
             }
-
-//                .get()
-//                .addOnSuccessListener { result ->
-//                    for (document in result) {
-//                        findViewById<TextView>(R.id.detailName).setText(document.data.getValue("name").toString())
-//                        findViewById<TextView>(R.id.detailPlace).setText(document.data.getValue("loc").toString())
-//                        findViewById<TextView>(R.id.detailNote).setText(document.data.getValue("note").toString())
-//                    }
-//                    }
-//                .addOnFailureListener { e ->
-//                    Log.w("FirebaseInfo", "Error reading document", e)
-//                }
     }
 }

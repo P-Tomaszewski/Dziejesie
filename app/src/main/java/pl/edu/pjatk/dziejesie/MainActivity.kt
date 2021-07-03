@@ -9,6 +9,7 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import pl.edu.pjatk.dziejesie.activity.AddEventActivity
 import pl.edu.pjatk.dziejesie.activity.EventDetailsActivity
+import pl.edu.pjatk.dziejesie.activity.MapActivity
 import pl.edu.pjatk.dziejesie.adapter.EventAdapter
 import pl.edu.pjatk.dziejesie.databinding.ActivityMainBinding
 
@@ -28,10 +29,18 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         setupAddButton()
+        setupAddMap()
         setupPaymentList()
     }
     private fun setupAddButton() = binding.buttonAdd.setOnClickListener {
         val intent = Intent(this, AddEventActivity::class.java)
+        startActivityForResult(
+            intent, REQUEST_ADD_PAYMENT
+        )
+    }
+
+    private fun setupAddMap() = binding.buttonMap.setOnClickListener {
+        val intent = Intent(this, MapActivity::class.java)
         startActivityForResult(
             intent, REQUEST_ADD_PAYMENT
         )
