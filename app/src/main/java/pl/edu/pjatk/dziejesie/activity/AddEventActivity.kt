@@ -2,31 +2,17 @@ package pl.edu.pjatk.dziejesie.activity
 
 import android.app.Activity
 import android.app.DatePickerDialog
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.widget.ArrayAdapter
-import android.widget.EditText
-import android.widget.Spinner
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import pl.edu.pjatk.dziejesie.R
 import pl.edu.pjatk.dziejesie.databinding.ActivityAddEventBinding
-import pl.edu.pjatk.dziejesie.databinding.ActivityAddEventBinding.inflate
-import pl.edu.pjatk.dziejesie.databinding.ActivityMainBinding.inflate
-import pl.edu.pjatk.dziejesie.databinding.ItemEventCardBinding.inflate
 import pl.edu.pjatk.dziejesie.model.Event
-import java.time.LocalDate
 import java.util.*
-import java.util.concurrent.Executors
-import kotlin.concurrent.thread
 
 
 class AddEventActivity : AppCompatActivity() {
-    private val pool by lazy {
-        Executors.newSingleThreadExecutor()
-    }
 
         val db = Firebase.firestore
 
@@ -41,8 +27,6 @@ class AddEventActivity : AppCompatActivity() {
 
         val id: Long = (intent.extras?.get("id") ?: -1L) as Long
         if(id != -1L) {
-//            setupSave(true, id)
-//            templateWithData(id)
         }
         else setupSave(false, 0L)
 
@@ -58,7 +42,7 @@ class AddEventActivity : AppCompatActivity() {
 
     private fun setupSave(edit: Boolean, id: Long) = view.saveButton.setOnClickListener {
 
-        if(!edit){
+        if(!edit){ //new
             val event = Event(
                     id = "",
                 name = view.name.text.toString(),

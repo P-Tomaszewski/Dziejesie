@@ -1,5 +1,6 @@
 package pl.edu.pjatk.dziejesie
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -51,6 +52,7 @@ class MainActivity : AppCompatActivity() {
         startActivityForResult(intent.putExtra("id", item), REQUEST_ADD_PAYMENT)
     }
 
+    @SuppressLint("NewApi")
     private fun setupPaymentList() {
         db = Firebase.firestore
         binding.recycler.apply {
